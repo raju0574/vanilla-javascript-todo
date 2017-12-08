@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+	* {
+		box-sizing: border-box;
+	}
+	li {
+		list-style-type: none;
+	}
+	.todo-container {
+		max-width: 500px;
+		min-height: 600px;
+		margin: 10px auto;
+		padding: 20px 20px 25px;
+		background-color: #f4f7f8;
+		border-radius: 10px;
+		font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+		box-shadow: 1px 1px 2px 2px rgba(148, 134, 134, 0.3);
+	}
+	.form-header {
+		font-size: 1.2em;
+		margin-bottom: 10px;
+	}
+	.todo-form{
+		margin:0 auto;
+		width: 90%;
+	}
+	.todo-form fieldset {
+		border: none;
+	}
+	.todo-form input{
+		width: 100%;
+		font-size: 1em;
+		padding: 15px;
+		background-color: #fff;
+		color:#000;
+		border-radius: 5px;
+		border: none;
+		box-shadow: inset 0 2px 2px rgba(0,0,0,0.3), 1px 1px 2px 2px rgba(0,0,0,0.3);
+	}
+	.todo-form input:focus {
+		outline: none;
+		box-shadow: inset 0 2px 2px #1abc9c, 1px 1px 2px 2px #1abc9c;
+	}
+	.todo-form .add-task {
+		display: block;
+		margin: 20px auto;
+		font-size: 1em;
+		font-weight: bold;
+		padding: 15px 50px;
+		background-color: #1abc9c;
+		color: #fff;
+		border-radius: 10px;
+		box-shadow: 2px 2px 2px 2px #a2f1e1;	
+	}
+	input[type="checkbox"] {
+		display: none;
+	}
+	input[type="checkbox"] + label {
+		display: inline-block;
+		width: 75%;
+		cursor: pointer;
+		word-break: break-all;
+	}
+	input[type="checkbox"] + label span {
+		display: inline-block;
+		width: 25px;
+		height: 25px;
+		padding: 5px;
+		margin: 5px 15px -5px 5px;
+		background-color:  rgba(255,255,255,.1);
+		border: 1px solid #847373;
+		box-shadow: inset 0 2px 2px rgba(0,0,0,0.3), 1px 1px 2px 2px rgba(0,0,0,0.3);
+		transition: all .2s ease-in-out;
+	}
+	input[type="checkbox"] + label span:hover{
+		transform: scale(1.1);
+	}
+	input[type="checkbox"]:checked + label {
+		text-decoration: line-through;
+	}
+	input[type="checkbox"]:checked + label span {
+		background-color: #1abc9c;
+		border: 5px solid #615555;
+		box-shadow: inset 0 2px 2px rgba(0,0,0,0.3), 1px 1px 2px 2px rgba(0,0,0,0.3);
+	}
+	.task-list {
+		margin:0 auto;
+		width: 80%;
+		-webkit-padding-start: 0;
+		max-height: 400px;
+		overflow-y: auto;
+		border-radius: 5px;
+	}
+	.task-list li{
+		font-size: 1.2em;
+		padding: 15px;
+		background-color: #fdb521;
+		color: #000;
+		border: 1px solid #f9a801;
+		box-shadow: 1px 1px 2px 2px #f9a801;
+	}
+	.remove-task {
+		float: right;
+		width: 30px;
+		height: 30px;
+		margin-top: 3px;
+    	border: none;
+    	background: transparent;
+    	cursor: pointer;
+	}
+	.remove-task:hover {
+		transition: all 200ms ease-in-out;
+		transform: scale(1.5);
+	}
+	.remove-task::before {
+		padding: 0;
+		content: 'X';
+		font-size: 1.2em;
+		font-weight: bold;
+		color: #000;
+	}
+	</style>
+</head>
+<body>
+	<div id="ToDoApp" class="todo-container">
+		<form id="ToDoForm" class="todo-form">
+			<fieldset>
+				<legend class="form-header">Manage Your Tasks</legend>
+				<input type="text" id="Task" class="user-input" required placeholder="Enter Your Task" /> 
+				<button type="submit" class="add-task"> Add Task</button>			
+			</fieldset>
+		</form>
+		<ul id="TaskList" class="task-list">
+		</ul>
+	</div>
+<script type="text/javascript" src="index.js"></script>
+</body>
+</html>
